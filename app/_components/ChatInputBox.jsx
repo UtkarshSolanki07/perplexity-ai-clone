@@ -129,7 +129,7 @@ function ChatInputBox() {
             </TabsList>
           </Tabs>
 
-          <div className="flex flex-wrap sm:flex-nowrap gap-2 items-center justify-end">
+          <div className="flex flex-wrap sm:flex-nowrap gap-2 items-center justify-end w-full sm:w-auto">
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Button
@@ -164,12 +164,8 @@ function ChatInputBox() {
               }}
               disabled={loading}
               className={`transition-all duration-300 ease-in-out rounded-full 
-                                ${
-                                  pulseEffect && !userSearchInput
-                                    ? "animate-pulse"
-                                    : ""
-                                } 
-                                ${loading ? "bg-blue-400" : ""}`}
+      ${pulseEffect && !userSearchInput ? "animate-pulse" : ""} 
+      ${loading ? "bg-blue-400" : ""}`}
             >
               {!userSearchInput ? (
                 <AudioLines

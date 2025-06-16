@@ -25,8 +25,7 @@ const DisplayResult = ({ searchInputRecord }) => {
     useEffect(() => {
             searchInputRecord?.Chats.length==0 ? getSearchApiResult() : GetSearchRecords();
             setSearchResults(searchInputRecord);
-            console.log('Search Input Record:', searchInputRecord);
-        
+            console.log('Search Input Record:', searchInputRecord);        
     }, [searchInputRecord]);
 
     const getSearchApiResult = async () => {
@@ -68,7 +67,7 @@ const DisplayResult = ({ searchInputRecord }) => {
         await GetSearchRecords();
         setLoadingSearch(false);
         await GenerateAIResp(formattedSearchResp, data[0].id);
-        setUserInput(''); // Clear input after search
+        setUserInput(''); 
     };
 
     const GenerateAIResp = async (formattedSearchResp, recordId) => {

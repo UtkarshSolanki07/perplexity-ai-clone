@@ -5,10 +5,6 @@ import React, { useEffect, useState } from 'react'
 import Header from './_components/Header';
 import DisplayResult from './_components/DisplayResult';
 
-
-
-
-
 const SearchQueryResult = () => {
     const {libId}=useParams();
     const [searchInputRecord,setSearchInputRecord]=useState();

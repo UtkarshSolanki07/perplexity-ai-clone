@@ -47,19 +47,27 @@ function ChatInputBox() {
   const onSearchQuery = async () => {
     setLoading(true);
     const libId = uuidv4();
-    const { data } = await supabase
-      .from("Library")
-      .insert([
-        {
-          searchInput: userSearchInput,
-          userEmail: user?.primaryEmailAddress?.emailAddress,
-          type: searchType,
-          libId: libId,
-        },
-      ])
-      .select();
+    const insertData =
+      searchType === "research"
+        ? {
+            researchInput: userSearchInput,
+            userEmail: user?.primaryEmailAddress?.emailAddress,
+            type: searchType,
+            libId: libId,
+          }
+        : {
+            searchInput: userSearchInput,
+            userEmail: user?.primaryEmailAddress?.emailAddress,
+            type: searchType,
+            libId: libId,
+          };
+    const { data } = await supabase.from("Library").insert([insertData]).select();
     setLoading(false);
-    router.push(`/search/${libId}`);
+    if (searchType === "research") {
+      router.push(`/research/${libId}`);
+    } else {
+      router.push(`/search/${libId}`);
+    }
     console.log(data[0]);
   };
 

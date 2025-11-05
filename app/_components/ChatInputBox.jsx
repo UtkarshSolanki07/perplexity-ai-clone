@@ -47,21 +47,23 @@ function ChatInputBox() {
   const onSearchQuery = async () => {
     setLoading(true);
     const libId = uuidv4();
-    const insertData =
-      searchType === "research"
-        ? {
-            researchInput: userSearchInput,
-            userEmail: user?.primaryEmailAddress?.emailAddress,
-            type: searchType,
-            libId: libId,
-          }
-        : {
-            searchInput: userSearchInput,
-            userEmail: user?.primaryEmailAddress?.emailAddress,
-            type: searchType,
-            libId: libId,
-          };
-    const { data } = await supabase.from("Library").insert([insertData]).select();
+    const insertData = {
+      searchInput: userSearchInput,
+      userEmail: user?.primaryEmailAddress?.emailAddress,
+      type: searchType,
+      libId: libId,
+    };
+    const { data, error } = await supabase
+      .from("Library")
+      .insert([insertData])
+      .select();
+    if (error) {
+      console.error("Error inserting library record:", error);
+      setLoading(false);
+      // You can add a toast or alert here to notify the user
+      alert("Failed to create search record. Please try again.");
+      return;
+    }
     setLoading(false);
     if (searchType === "research") {
       router.push(`/research/${libId}`);

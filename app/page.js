@@ -1,11 +1,10 @@
-import { Button,buttonVariants } from '@/components/ui/button';
-import ChatInputBox from './_components/ChatInputBox';
+"use client";
+import ChatInputBox from "./_components/ChatInputBox";
 
 export default function Home() {
   return (
-    <div className='w-full'>
-     <ChatInputBox/>
-
+    <div className="w-full">
+      <ChatInputBox />
     </div>
   );
 }

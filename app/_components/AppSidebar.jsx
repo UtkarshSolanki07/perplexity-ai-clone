@@ -59,13 +59,59 @@ const AppSidebar = () => {
     <div>
       <Sidebar className="bg-slate-900 text-white border-r border-slate-700">
         <SidebarHeader className="bg-slate-800 border-b border-slate-700 flex items-center justify-center py-6">
-          <Image
-            src={"/logo.png"}
-            width={140}
-            height={120}
-            alt={"logo"}
-            className="filter brightness-0 invert"
-          />
+          <div className="relative">
+            <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 tracking-wider drop-shadow-lg">
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0s" }}
+              >
+                B
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.1s" }}
+              >
+                o
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.2s" }}
+              >
+                t
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.3s" }}
+              >
+                Z
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.4s" }}
+              >
+                i
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.5s" }}
+              >
+                l
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.6s" }}
+              >
+                l
+              </span>
+              <span
+                className="inline-block animate-[bounce_0.8s_ease-in-out_1]"
+                style={{ animationDelay: "0.7s" }}
+              >
+                a
+              </span>
+            </h1>
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-30 blur-2xl animate-[fadeIn_1.5s_ease-out_1]"></div>
+          </div>
         </SidebarHeader>
         <SidebarContent className="bg-slate-900 px-3">
           <SidebarGroup>

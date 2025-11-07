@@ -42,7 +42,7 @@ export const llmResearchModel = inngest.createFunction(
   { id: "llm-research-model" },
   { event: "llm-research-model" },
   async ({ event, step }) => {
-    // Fetch previous chats for context
+    
     const { data: previousChats, error: fetchError } = await supabase
       .from("Chats")
       .select("userSearchInput, aiResp")
@@ -53,11 +53,11 @@ export const llmResearchModel = inngest.createFunction(
       console.error("Error fetching previous chats:", fetchError);
     }
 
-    // Build conversation context
+    
     let conversationContext = "";
     if (previousChats && previousChats.length > 0) {
       conversationContext = previousChats
-        .filter((chat) => chat.aiResp) // Only include chats with AI responses
+        .filter((chat) => chat.aiResp) 
         .map(
           (chat) => `User: ${chat.userSearchInput}\nAssistant: ${chat.aiResp}`
         )

@@ -37,7 +37,7 @@ export async function POST(req) {
   }
 
   // Handle news search with NewsAPI
-  if (searchType === "Search") {
+  if (searchType.toLowerCase() === "search") {
     try {
       // NewsAPI endpoint - using 'everything' for more flexibility
       const newsApiUrl = "https://newsapi.org/v2/everything";
@@ -106,7 +106,7 @@ export async function POST(req) {
   }
 
   // Handle research search with Google Custom Search
-  if (searchType === "Research") {
+  if (searchType.toLowerCase() === "research") {
     try {
       const params = {
         key: process.env.GOOGLE_API_KEY,
@@ -150,6 +150,6 @@ export async function POST(req) {
     }
   }
 
-  // Default response
+  
   return NextResponse.json({ error: "Invalid search type" }, { status: 400 });
 }

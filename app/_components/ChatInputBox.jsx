@@ -73,7 +73,7 @@ function ChatInputBox() {
       return;
     }
     setLoading(false);
-    if (searchType === "research") {
+    if (searchType === "Research") {
       router.push(`/research/${libId}`);
     } else {
       router.push(`/search/${libId}`);
@@ -130,17 +130,26 @@ function ChatInputBox() {
             <Sparkles
               className="absolute -top-6 -right-8 text-teal-400 opacity-60"
               size={28}
-              style={{ animation: "float 4s ease-in-out infinite", opacity: 0.6 }}
+              style={{
+                animation: "float 4s ease-in-out infinite",
+                opacity: 0.6,
+              }}
             />
             <Zap
               className="absolute -bottom-2 -left-6 text-cyan-400 opacity-55"
               size={22}
-              style={{ animation: "float 5s ease-in-out infinite 0.6s", opacity: 0.55 }}
+              style={{
+                animation: "float 5s ease-in-out infinite 0.6s",
+                opacity: 0.55,
+              }}
             />
             <Sparkles
               className="absolute top-1/2 -right-10 text-emerald-400 opacity-50"
               size={20}
-              style={{ animation: "float 4.5s ease-in-out infinite 1s", opacity: 0.5 }}
+              style={{
+                animation: "float 4.5s ease-in-out infinite 1s",
+                opacity: 0.5,
+              }}
             />
 
             {/* BotZilla Text */}
@@ -274,7 +283,7 @@ function ChatInputBox() {
               <TabsTrigger
                 value="Search"
                 className="flex items-center gap-1 text-primary transition-transform duration-200 hover:scale-105"
-                onClick={() => setSearchType("search")}
+                onClick={() => setSearchType("Search")}
               >
                 <SearchCheck className="h-4 w-4" />
                 Search
@@ -282,7 +291,7 @@ function ChatInputBox() {
               <TabsTrigger
                 value="Research"
                 className="flex items-center gap-1 text-primary transition-transform duration-200 hover:scale-105"
-                onClick={() => setSearchType("research")}
+                onClick={() => setSearchType("Research")}
               >
                 <Atom className="h-4 w-4" />
                 Research
